@@ -6,17 +6,35 @@
         <link rel="stylesheet" href="./reset.css">
         <link rel="stylesheet" href="./style.css">
         <title>Página Inicial</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <header>
-
+        <aside id="carrinho" class="fixed right-0 top-0 bg-orange-700 h-screen w-[370px] text-slate-200">
+            <div id="cabecalho-carrinho" class="flex justify-between m-4">
+                <p>Meu Carrinho</p>
+                <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark"></i></button>
+            </div>
+            <section id="produto-carrinho">
+                <p>livro 1</p>
+                <p>livro 2</p>
+                <p>livro 3</p>
+            </section>
+            <p id="preco-total">R&#x24;600</p>
+            <button class="bg-slate-200 text-slate-900 p-2">Finalizar Compra</button>
+        </aside>
+        <header class="bg-orange-700 flex justify-between">
+            <img class="m-2" src="./img/logoBookStore.png" alt="Imagem da Logo BookStore">
+            <div class="text-white flex gap-2 items-end mx-2">
+                <button><i class="fa-solid fa-user-astronaut"></i></button>
+                <button id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
         </header>
 
         <main>
-            <section id="container-produto">
-                
-            </section>
+            <section id="container-produto" class="flex flex-wrap"></section>
         </main>
-        <script src="./main.js"></script>
+        <script type="module" src="./main.js"></script>
     </body>
 </html>

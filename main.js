@@ -1,3 +1,5 @@
+import { inicializarCarrinho } from "./src/menuCarrinho";
+
 const catalogo = [
     {
         id: 1,
@@ -51,19 +53,20 @@ const catalogo = [
 
 for(const produtoCatalogo of catalogo){
 
-const cartaoProduto = `
-<div id="card-produto">
-    <img 
-    src="./img/${produtoCatalogo.imagem}" 
-    alt="Imagem da Box Senhor Dos Anéis + O Hobbit"
-    style="height: 360px"
-    >
-    <h2>${produtoCatalogo.nome}</h2>
-    <p>R&#x24; ${produtoCatalogo.preco}</p>
-    <button>Adicionar ao carrinho</button>
-</div>
-`;
+    const cartaoProduto = `
+    <div id="card-produto-${produtoCatalogo.id}" class="border-solid border-[1px] border-sky-500 w-80 m-2 p-[10px]">
+        <img 
+        src="./img/${produtoCatalogo.imagem}"
+        alt="${produtoCatalogo.nome}"
+        style="height: 360px"
+        >
+        <h2>${produtoCatalogo.nome}</h2>
+        <p>R&#x24; ${produtoCatalogo.preco}</p>
+        <button>Adicionar ao carrinho</button>
+    </div>
+    `;
 
-document.getElementById("container-produto").innerHTML += cartaoProduto;
+    document.getElementById("container-produto").innerHTML += cartaoProduto;
 };
 
+inicializarCarrinho();
