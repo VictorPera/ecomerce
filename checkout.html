@@ -12,21 +12,76 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 
-    <body class="bg-slate-200 flex flex-col">
+    <body class="bg-stone-200 flex flex-col h-screen">
         <header class="bg-slate-800 flex justify-between px-8 py-1 sticky top-0 shadow-md shadow-slate-800 text-2xl z-10">
-            <a href="./index.html"><img class="m-2 cursor-pointer" src="./img/logoBookStore.png" alt="Imagem da Logo BookStore"></a>
-            <div class="text-white flex gap-2 items-end mx-2 my-4">
-                <button class="mx-2"><i class="fa-solid fa-user-astronaut hover:text-slate-400 duration-300"></i></button>
-                <button id="abrir-carrinho" class="mr-2"><i class="fa-solid fa-cart-shopping hover:text-slate-400 duration-300"></i></button>
-            </div>
+            <a href="./index.html"><img class="h-16 m-2 cursor-pointer" src="./img/logoBookStore.png" alt="Imagem da Logo BookStore"></a>
         </header>
 
-        <main class="flex flex-col items-center">
-        </main>
+        <form class="flex w-100 px-5 py-10 gap-4 grow">
+            <section id="dados-usuarios" class="w-1/3 bg-white rounded-lg py-5">
+                <p class="mb-5 text-center font-bold">Seus Dados</p>
+                <div class="flex flex-col px-10 py-3">
+                    <label for="nome" class="font-bold text-sm mb-2">Nome</label>
+                    <input type="text" id="nome" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="Seu Nome" required>
+                </div>
+                <div class="flex flex-col px-10 py-3">
+                    <label for="email" class="font-bold text-sm mb-2">E-mail</label>
+                    <input type="email" id="email" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="Ex: seuemail@gmail.com" required>
+                </div>
+                <div class="flex flex-col px-10 py-3">
+                    <label for="telefone" class="font-bold text-sm mb-2">Telefone de Contato</label>
+                    <input type="tel" id="telefone" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="Ex: (xx)xxxxx-xxxx" required>
+                </div>
+            </section>
 
-        <footer class="flex justify-center">
-            <a class="my-8 p-4" href="#top">voltar ao topo</a>
-        </footer>
+            <section id="pagamento-entrega" class=" w-1/3 bg-white rounded-lg py-5">
+                <p class="mb-5 text-center font-bold">Pagamento e Entrega</p>
+                <div class="flex flex-col px-10 py-3">
+                    <label for="numero-cartao" class="font-bold text-sm mb-2">Número do Cartão</label>
+                    <input type="number" id="numero-cartao" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                </div>
+
+                <div class="flex">
+                    <div class="flex flex-col px-10 py-3 w-1/3">
+                        <label for="cvv" class="font-bold text-sm mb-2">CVV</label>
+                        <input type="number" id="cvv" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="xxx" required>
+                    </div>
+                    <div class="flex flex-col px-10 py-3 w-1/2">
+                        <label for="data-validade" class="font-bold text-sm mb-2">Data de Validade</label>
+                        <input type="text" id="data-validade" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="xx/xx" required>
+                    </div>
+                </div>
+
+                <div class="flex flex-col px-10 py-3">
+                    <label for="cep" class="font-bold text-sm mb-2">CEP</label>
+                    <input type="number" id="cep" class="rounded-sm px-2 py-1 border-2 border-slate-200"
+                        placeholder="xxxxx-xxx" required>
+                </div>
+                <div class="flex flex-col px-10 py-3">
+                    <label for="endereco" class="font-bold text-sm mb-2">Endereço</label>
+                    <input type="text" id="endereco" class="rounded-sm px-2 py-1 border-2 border-slate-200"
+                        required>
+                </div>
+                <div class="flex">
+                    <div class="flex flex-col px-10 py-3 w-1/2">
+                        <label for="numero-residencia" class="font-bold text-sm mb-2">Número</label>
+                        <input type="text" id="numero-residencia" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="Ex: xx ou xx-A" required>
+                    </div>
+                    <div class="flex flex-col px-10 py-3 w-1/2">
+                        <label for="complemento" class="font-bold text-sm mb-2">Complemento</label>
+                        <input type="text" id="complemento" class="rounded-sm px-2 py-1 border-2 border-slate-200" required>
+                    </div>
+                </div>
+            </section>
+
+            <section id="produtos-checkout" class=" w-1/3 bg-white rounded-lg py-5">
+                <p class="mb-5 text-center font-bold">Pagamento e Entrega</p>
+                <div class="flex flex-col px-10 py-3">
+                    <label for="nome" class="font-bold text-sm mb-2">Nome</label>
+                    <input type="text" id="nome" class="rounded-sm px-2 py-1 border-2 border-slate-200" placeholder="Seu Nome" required>
+                </div>
+            </section>
+        </form>
     </body>
 
 </html>
