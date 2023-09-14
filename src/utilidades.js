@@ -30,14 +30,14 @@ export const catalogo = [
 	},
 	{
 		id: '5',
-		nome: 'As Crônicas de Gelo e Fogo',
+		nome: 'Box As Crônicas de Gelo e Fogo',
 		preco: 550,
 		imagem: 'produto-5.png',
 		adolescente: false,
 	},
 	{
 		id: '6',
-		nome: 'Diário De Um Banana - 10 Volumes',
+		nome: 'Box Diário De Um Banana - 10 Volumes',
 		preco: 288.5,
 		imagem: 'produto-6.png',
 		adolescente: true,

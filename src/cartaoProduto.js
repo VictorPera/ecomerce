@@ -1,11 +1,12 @@
 import { catalogo } from "./utilidades";
 import { adicionarAoCarrinho } from './menuCarrinho';
 
+//Função que constroi o card de produtos e adiciona o evento de click ao botao de adicionar ao carrinho
 export function renderizarCatalogo(){
     for(const produtoCatalogo of catalogo){
 
         const cartaoProduto = `
-        <div id="card-produto-${produtoCatalogo.id}" class="flex flex-col w-80 m-2 p-2 justify-between shadow-xl shadow-slate-400 rounded-lg group ${produtoCatalogo.adolescente ? 'adolescente' : 'adulto'}">
+        <div id="card-produto-${produtoCatalogo.id}" class="flex flex-col w-80 m-2 p-2 justify-between shadow-xl shadow-slate-400 rounded-lg produto group ${produtoCatalogo.adolescente ? 'adolescente' : 'adulto'}">
             <img 
             src="./img/${produtoCatalogo.imagem}"
             alt="${produtoCatalogo.nome}"

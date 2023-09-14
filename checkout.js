@@ -1,5 +1,7 @@
+import { atualizarPrecoCarrinho } from "./src/menuCarrinho";
 import { apagarDolocalStorage, desenharProdutoCarrinhoSimples, lerLocalStorage, salvarLocalStorage } from "./src/utilidades";
 
+//Função que desenhas os cards de produtos na section de produtos do checkout, cards esses similares aos do carrinho
 function desenharProdutosCheckout(){
     const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 
@@ -8,6 +10,7 @@ function desenharProdutosCheckout(){
     }
 }
 
+//Função que finaliza a compra e gera um histórico de compras
 function finalizarCompra(event){
     event.preventDefault();
     const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
@@ -20,7 +23,7 @@ function finalizarCompra(event){
         dataPedido: dataAtual,
         pedido: idsProdutoCarrinhoComQuantidade
     }
-    const historicoDePedidos = lerLocalStorage('historico') ?? [];
+    const historicoDePedidos = lerLocalStorage('historico') ?? {};
     const historicoDePedidosAtualizado = [pedidoFeito, ...historicoDePedidos];
 
     salvarLocalStorage('historico', historicoDePedidosAtualizado);
@@ -30,5 +33,6 @@ function finalizarCompra(event){
 }
 
 desenharProdutosCheckout();
+atualizarPrecoCarrinho();
 
 document.addEventListener('submit', (event) => finalizarCompra(event));

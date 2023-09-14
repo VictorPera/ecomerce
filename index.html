@@ -40,8 +40,40 @@
         </header>
         <!-- Fim cabeçalho -->
 
-        <!-- Criação dos filtros de produto -->
+        <!-- Conteúdo principal da página -->
         <main class="flex flex-col items-center">
+
+            <script>
+            const procurar = () => {
+            const areaDePesquisa = document.getElementById("pesquisa").value.toUpperCase();
+            const itensArmazenados = document.getElementById("container-produto");
+            const produto = document.querySelectorAll(".produto");
+            const nomeDoProduto = itensArmazenados.getElementsByTagName("h2");
+
+            for (var i = 0; i < nomeDoProduto.length; i++) {
+                let match = produto[i].getElementsByTagName("h2")[0];
+
+                if (match) {
+                    let valorDoTexto = match.textContent || match.innerHTML;
+
+                    if (valorDoTexto.toUpperCase().indexOf(areaDePesquisa) > -1) {
+                        produto[i].style.display = "";
+                    } else {
+                        produto[i].style.display = "none";
+                    }
+                }
+            }
+            }
+            </script>
+
+            <section id="container-pesquisa" class="w-6/12 flex flex-row items-center p-2">
+                <form class="bg-slate-100 mt-6 w-full flex flex-row items-center border-2 border-solid rounded-lg outline-none">
+                    <i class="fa fa-search pl-2"></i>
+                    <input type="text" id="pesquisa" class="w-full bg-slate-100 p-2 rounded-lg outline-none" placeholder="Procure por produtos" onkeyup="procurar()">
+                </form>
+            </section>
+
+            <!-- Criação dos filtros de produto -->
             <section id="filtros" class="p-10 flex">
                 <div class="px-2">
                     <input id="exibir-todos" type="radio" name="filtro" class="peer hidden" checked>
